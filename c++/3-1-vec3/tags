@@ -1,0 +1,42 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/guozhi/Project/ray-tracer/c++/3-1-vec3/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210905.0/
+COLOR_H	color.hpp	/^#define COLOR_H$/;"	d
+VEC3_H	vec3.hpp	/^#define VEC3_H$/;"	d
+color	vec3.hpp	/^using color = vec3;    \/\/ RGB color$/;"	t	typeref:typename:vec3
+cross	vec3.hpp	/^inline vec3 cross(const vec3 &u, const vec3 &v) {$/;"	f	typeref:typename:vec3
+dot	vec3.hpp	/^inline double dot(const vec3 &u, const vec3 &v) {$/;"	f	typeref:typename:double
+e	vec3.hpp	/^        double e[3];$/;"	m	class:vec3	typeref:typename:double[3]
+length	vec3.hpp	/^        double length() const {$/;"	f	class:vec3	typeref:typename:double
+length_squared	vec3.hpp	/^        double length_squared() const {$/;"	f	class:vec3	typeref:typename:double
+main	main.cpp	/^int main() {$/;"	f	typeref:typename:int
+operator *	vec3.hpp	/^inline vec3 operator*(const vec3 &u, const vec3 &v) {$/;"	f	typeref:typename:vec3
+operator *	vec3.hpp	/^inline vec3 operator*(const vec3 &v, double t) {$/;"	f	typeref:typename:vec3
+operator *	vec3.hpp	/^inline vec3 operator*(double t, const vec3 &v) {$/;"	f	typeref:typename:vec3
+operator *=	vec3.hpp	/^        vec3& operator*=(const double t) {$/;"	f	class:vec3	typeref:typename:vec3 &
+operator +	vec3.hpp	/^inline vec3 operator+(const vec3 &u, const vec3 &v){$/;"	f	typeref:typename:vec3
+operator +=	vec3.hpp	/^        vec3& operator+=(const vec3 &v) {$/;"	f	class:vec3	typeref:typename:vec3 &
+operator -	vec3.hpp	/^        vec3 operator-() const {return vec3(-e[0], -e[1], -e[2]); }$/;"	f	class:vec3	typeref:typename:vec3
+operator -	vec3.hpp	/^inline vec3 operator-(const vec3 &u, const vec3 &v) {$/;"	f	typeref:typename:vec3
+operator /	vec3.hpp	/^inline vec3 operator\/(vec3 v, double t) {$/;"	f	typeref:typename:vec3
+operator /=	vec3.hpp	/^        vec3& operator\/=(const double t) {$/;"	f	class:vec3	typeref:typename:vec3 &
+operator <<	vec3.hpp	/^inline std::ostream& operator<<(std::ostream &out, const vcec3 &v) {$/;"	f	typeref:typename:std::ostream &
+operator []	vec3.hpp	/^        double operator [](int i) const { return e[i]; }$/;"	f	class:vec3	typeref:typename:double
+operator []	vec3.hpp	/^        double& operator[](int i) { return e[i]; }$/;"	f	class:vec3	typeref:typename:double &
+point3	vec3.hpp	/^using point3 = vec3;   \/\/ 3D point$/;"	v	typeref:class:vec3 using
+unit_vector	vec3.hpp	/^inline vec3 unit_vector(vec3 v) {$/;"	f	typeref:typename:vec3
+vec3	vec3.hpp	/^        vec3() : e{0,0,0} {}$/;"	f	class:vec3
+vec3	vec3.hpp	/^        vec3(double e0, double e1, double e2) : e{e0, e1, e2} {}$/;"	f	class:vec3
+vec3	vec3.hpp	/^class vec3 {$/;"	c
+write_color	color.hpp	/^void write_color(std::ostream &out, color pixel_color) {$/;"	f	typeref:typename:void
+x	vec3.hpp	/^        double x() const { return e[0]; }$/;"	f	class:vec3	typeref:typename:double
+y	vec3.hpp	/^        double y() const { return e[1]; }$/;"	f	class:vec3	typeref:typename:double
+z	vec3.hpp	/^        double z() const { return e[2]; }$/;"	f	class:vec3	typeref:typename:double
