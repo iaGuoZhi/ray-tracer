@@ -10,15 +10,16 @@
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210905.0/
 COLOR_H	color.hpp	/^#define COLOR_H$/;"	d
-RAY_H	ray.h	/^#define RAY_H$/;"	d
+RAY_H	ray.hpp	/^#define RAY_H$/;"	d
 VEC3_H	vec3.hpp	/^#define VEC3_H$/;"	d
-at	ray.h	/^        point3 at(double t) const {$/;"	f	class:ray	typeref:typename:point3
+at	ray.hpp	/^        point3 at(double t) const {$/;"	f	class:ray	typeref:typename:point3
 color	vec3.hpp	/^using color = vec3;    \/\/ RGB color$/;"	t	typeref:typename:vec3
 cross	vec3.hpp	/^inline vec3 cross(const vec3 &u, const vec3 &v) {$/;"	f	typeref:typename:vec3
-dir	ray.h	/^        vec3 dir;$/;"	m	class:ray	typeref:typename:vec3
-direction	ray.h	/^        vec3 direction() const { return dir; }$/;"	f	class:ray	typeref:typename:vec3
+dir	ray.hpp	/^        vec3 dir;$/;"	m	class:ray	typeref:typename:vec3
+direction	ray.hpp	/^        vec3 direction() const { return dir; }$/;"	f	class:ray	typeref:typename:vec3
 dot	vec3.hpp	/^inline double dot(const vec3 &u, const vec3 &v) {$/;"	f	typeref:typename:double
 e	vec3.hpp	/^        double e[3];$/;"	m	class:vec3	typeref:typename:double[3]
+hit_sphere	main.cpp	/^double hit_sphere(const point3& center, double radius, const ray& r) {$/;"	f	typeref:typename:double
 length	vec3.hpp	/^        double length() const {$/;"	f	class:vec3	typeref:typename:double
 length_squared	vec3.hpp	/^        double length_squared() const {$/;"	f	class:vec3	typeref:typename:double
 main	main.cpp	/^int main() {$/;"	f	typeref:typename:int
@@ -35,12 +36,12 @@ operator /=	vec3.hpp	/^        vec3& operator\/=(const double t) {$/;"	f	class:v
 operator <<	vec3.hpp	/^inline std::ostream& operator<<(std::ostream &out, const vec3 &v) {$/;"	f	typeref:typename:std::ostream &
 operator []	vec3.hpp	/^        double operator [](int i) const { return e[i]; }$/;"	f	class:vec3	typeref:typename:double
 operator []	vec3.hpp	/^        double& operator[](int i) { return e[i]; }$/;"	f	class:vec3	typeref:typename:double &
-orig	ray.h	/^        point3 orig;$/;"	m	class:ray	typeref:typename:point3
-origin	ray.h	/^        point3 origin() const { return orig; }$/;"	f	class:ray	typeref:typename:point3
+orig	ray.hpp	/^        point3 orig;$/;"	m	class:ray	typeref:typename:point3
+origin	ray.hpp	/^        point3 origin() const { return orig; }$/;"	f	class:ray	typeref:typename:point3
 point3	vec3.hpp	/^using point3 = vec3;   \/\/ 3D point$/;"	t	typeref:typename:vec3
-ray	ray.h	/^        ray() {}$/;"	f	class:ray
-ray	ray.h	/^        ray(const point3& origin, const vec3& direction)$/;"	f	class:ray
-ray	ray.h	/^class ray {$/;"	c
+ray	ray.hpp	/^        ray() {}$/;"	f	class:ray
+ray	ray.hpp	/^        ray(const point3& origin, const vec3& direction)$/;"	f	class:ray
+ray	ray.hpp	/^class ray {$/;"	c
 ray_color	main.cpp	/^color ray_color(const ray& r) {$/;"	f	typeref:typename:color
 unit_vector	vec3.hpp	/^inline vec3 unit_vector(vec3 v) {$/;"	f	typeref:typename:vec3
 vec3	vec3.hpp	/^        vec3() : e{0,0,0} {}$/;"	f	class:vec3
