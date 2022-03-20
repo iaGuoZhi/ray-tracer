@@ -4,29 +4,30 @@
 !_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
 !_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
 !_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
-!_TAG_PROC_CWD	/home/guozhi/Project/ray-tracer/c++/4-1-ray/	//
+!_TAG_PROC_CWD	/home/guozhi/Project/ray-tracer/c++/	//
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210905.0/
-CAMERA_H	camera.h	/^#define CAMERA_H$/;"	d
 CAMERA_H	camera.hpp	/^#define CAMERA_H$/;"	d
 COLOR_H	color.hpp	/^#define COLOR_H$/;"	d
 HITTABLE_H	hittable.hpp	/^#define HITTABLE_H$/;"	d
-HITTABLE_LIST_H	hittable_list.h	/^#define HITTABLE_LIST_H$/;"	d
 HITTABLE_LIST_H	hittable_list.hpp	/^#define HITTABLE_LIST_H$/;"	d
+MATERIAL_H	material.h	/^#define MATERIAL_H$/;"	d
+MATERIAL_H	material.hpp	/^#define MATERIAL_H$/;"	d
 RAY_H	ray.hpp	/^#define RAY_H$/;"	d
 RTWEEKEND_H	rtweekend.hpp	/^#define RTWEEKEND_H$/;"	d
 SPHERE_H	sphere.hpp	/^#define SPHERE_H$/;"	d
 VEC3_H	vec3.hpp	/^#define VEC3_H$/;"	d
 add	hittable_list.hpp	/^        void add(shared_ptr<hittable> object) { objects.push_back(object); }$/;"	f	class:hittable_list	typeref:typename:void
+albedo	material.hpp	/^        color albedo;$/;"	m	class:lambertian	typeref:typename:color
+albedo	material.hpp	/^        color albedo;$/;"	m	class:metal	typeref:typename:color
 at	ray.hpp	/^        point3 at(double t) const {$/;"	f	class:ray	typeref:typename:point3
-camera	camera.h	/^        camera() {$/;"	f	class:camera
-camera	camera.h	/^class camera {$/;"	c
 camera	camera.hpp	/^        camera() {$/;"	f	class:camera
 camera	camera.hpp	/^class camera {$/;"	c
 center	sphere.hpp	/^        point3 center;$/;"	m	class:sphere	typeref:typename:point3
 clamp	rtweekend.hpp	/^inline double clamp(double x, double min, double max) {$/;"	f	typeref:typename:double
+clean	Makefile	/^clean:$/;"	t
 clear	hittable_list.hpp	/^        void clear() { objects.clear(); }$/;"	f	class:hittable_list	typeref:typename:void
 color	vec3.hpp	/^using color = vec3;    \/\/ RGB color$/;"	t	typeref:typename:vec3
 cross	vec3.hpp	/^inline vec3 cross(const vec3 &u, const vec3 &v) {$/;"	f	typeref:typename:vec3
@@ -36,7 +37,6 @@ direction	ray.hpp	/^        vec3 direction() const { return dir; }$/;"	f	class:r
 dot	vec3.hpp	/^inline double dot(const vec3 &u, const vec3 &v) {$/;"	f	typeref:typename:double
 e	vec3.hpp	/^        double e[3];$/;"	m	class:vec3	typeref:typename:double[3]
 front_face	hittable.hpp	/^    bool front_face;$/;"	m	struct:hit_record	typeref:typename:bool
-get_ray	camera.h	/^        ray get_ray(double u, double v) const {$/;"	f	class:camera	typeref:typename:ray
 get_ray	camera.hpp	/^        ray get_ray(double u, double v) const {$/;"	f	class:camera	typeref:typename:ray
 hit	hittable_list.hpp	/^bool hittable_list::hit(const ray&r, double t_min, double t_max, hit_record& rec) const {$/;"	f	class:hittable_list	typeref:typename:bool
 hit	sphere.hpp	/^bool sphere::hit(const ray&r, double t_min, double t_max, hit_record& rec) const {$/;"	f	class:sphere	typeref:typename:bool
@@ -45,14 +45,22 @@ hittable	hittable.hpp	/^class hittable {$/;"	c
 hittable_list	hittable_list.hpp	/^        hittable_list() {}$/;"	f	class:hittable_list
 hittable_list	hittable_list.hpp	/^        hittable_list(shared_ptr<hittable> object) {$/;"	f	class:hittable_list
 hittable_list	hittable_list.hpp	/^class hittable_list: public hittable {$/;"	c
-horizontal	camera.h	/^        vec3 horizontal;$/;"	m	class:camera	typeref:typename:vec3
 horizontal	camera.hpp	/^        vec3 horizontal;$/;"	m	class:camera	typeref:typename:vec3
+image	Makefile	/^image : prog$/;"	t
 infinity	rtweekend.hpp	/^const double infinity = std::numeric_limits<double>::infinity();$/;"	v	typeref:typename:const double
+lambertian	material.hpp	/^        lambertian(const color& a) : albedo(a) {}$/;"	f	class:lambertian
+lambertian	material.hpp	/^class lambertian : public material {$/;"	c
 length	vec3.hpp	/^        double length() const {$/;"	f	class:vec3	typeref:typename:double
 length_squared	vec3.hpp	/^        double length_squared() const {$/;"	f	class:vec3	typeref:typename:double
-lower_left_corner	camera.h	/^        point3 lower_left_corner;$/;"	m	class:camera	typeref:typename:point3
 lower_left_corner	camera.hpp	/^        point3 lower_left_corner;$/;"	m	class:camera	typeref:typename:point3
 main	main.cpp	/^int main() {$/;"	f	typeref:typename:int
+mat_ptr	hittable.hpp	/^    shared_ptr<material> mat_ptr;$/;"	m	struct:hit_record	typeref:typename:shared_ptr<material>
+mat_ptr	sphere.hpp	/^        shared_ptr<material> mat_ptr;$/;"	m	class:sphere	typeref:typename:shared_ptr<material>
+material	material.h	/^class material {$/;"	c
+material	material.hpp	/^class material {$/;"	c
+metal	material.hpp	/^        metal(const color& a) : albedo(a) {}$/;"	f	class:metal
+metal	material.hpp	/^class metal : public material {$/;"	c
+near_zero	vec3.hpp	/^        bool near_zero() const {$/;"	f	class:vec3	typeref:typename:bool
 normal	hittable.hpp	/^    vec3 normal;$/;"	m	struct:hit_record	typeref:typename:vec3
 objects	hittable_list.hpp	/^        std::vector<shared_ptr<hittable>> objects;$/;"	m	class:hittable_list	typeref:typename:std::vector<shared_ptr<hittable>>
 operator *	vec3.hpp	/^inline vec3 operator*(const vec3 &u, const vec3 &v) {$/;"	f	typeref:typename:vec3
@@ -69,29 +77,36 @@ operator <<	vec3.hpp	/^inline std::ostream& operator<<(std::ostream &out, const 
 operator []	vec3.hpp	/^        double operator [](int i) const { return e[i]; }$/;"	f	class:vec3	typeref:typename:double
 operator []	vec3.hpp	/^        double& operator[](int i) { return e[i]; }$/;"	f	class:vec3	typeref:typename:double &
 orig	ray.hpp	/^        point3 orig;$/;"	m	class:ray	typeref:typename:point3
-origin	camera.h	/^        point3 origin;$/;"	m	class:camera	typeref:typename:point3
 origin	camera.hpp	/^        point3 origin;$/;"	m	class:camera	typeref:typename:point3
 origin	ray.hpp	/^        point3 origin() const { return orig; }$/;"	f	class:ray	typeref:typename:point3
 p	hittable.hpp	/^    point3 p;$/;"	m	struct:hit_record	typeref:typename:point3
 pi	rtweekend.hpp	/^const double pi = 3.1415926535897932385;$/;"	v	typeref:typename:const double
 point3	vec3.hpp	/^using point3 = vec3;   \/\/ 3D point$/;"	t	typeref:typename:vec3
+prog	Makefile	/^prog:$/;"	t
 radius	sphere.hpp	/^        double radius;$/;"	m	class:sphere	typeref:typename:double
+random	vec3.hpp	/^        inline static vec3 random() {$/;"	f	class:vec3	typeref:typename:vec3
+random	vec3.hpp	/^        inline static vec3 random(double min, double max) {$/;"	f	class:vec3	typeref:typename:vec3
 random_double	rtweekend.hpp	/^inline double random_double() {$/;"	f	typeref:typename:double
 random_double	rtweekend.hpp	/^inline double random_double(double min, double max) {$/;"	f	typeref:typename:double
+random_in_hemisphere	vec3.hpp	/^vec3 random_in_hemisphere(const vec3& normal) {$/;"	f	typeref:typename:vec3
+random_in_unit_sphere	vec3.hpp	/^vec3 random_in_unit_sphere() {$/;"	f	typeref:typename:vec3
+random_unit_vector	vec3.hpp	/^vec3 random_unit_vector() {$/;"	f	typeref:typename:vec3
 ray	ray.hpp	/^        ray() {}$/;"	f	class:ray
 ray	ray.hpp	/^        ray(const point3& origin, const vec3& direction)$/;"	f	class:ray
 ray	ray.hpp	/^class ray {$/;"	c
-ray_color	main.cpp	/^color ray_color(const ray& r, const hittable& world) {$/;"	f	typeref:typename:color
+ray_color	main.cpp	/^color ray_color(const ray& r, const hittable& world, int depth) {$/;"	f	typeref:typename:color
+reflect	vec3.hpp	/^        vec3 reflect(const vec3& v, const vec3& n) {$/;"	f	class:vec3	typeref:typename:vec3
+scatter	material.hpp	/^        virtual bool scatter($/;"	f	class:lambertian	typeref:typename:bool
+scatter	material.hpp	/^        virtual bool scatter($/;"	f	class:metal	typeref:typename:bool
 set_face_normal	hittable.hpp	/^    inline void set_face_normal(const ray& r, const vec3& outward_normal) {$/;"	f	struct:hit_record	typeref:typename:void
 sphere	sphere.hpp	/^        sphere() {}$/;"	f	class:sphere
-sphere	sphere.hpp	/^        sphere(point3 cen, double r) : center(cen), radius(r) {};$/;"	f	class:sphere
+sphere	sphere.hpp	/^        sphere(point3 cen, double r, shared_ptr<material> m)$/;"	f	class:sphere
 sphere	sphere.hpp	/^class sphere : public hittable{$/;"	c
 t	hittable.hpp	/^    double t;$/;"	m	struct:hit_record	typeref:typename:double
 unit_vector	vec3.hpp	/^inline vec3 unit_vector(vec3 v) {$/;"	f	typeref:typename:vec3
 vec3	vec3.hpp	/^        vec3() : e{0,0,0} {}$/;"	f	class:vec3
 vec3	vec3.hpp	/^        vec3(double e0, double e1, double e2) : e{e0, e1, e2} {}$/;"	f	class:vec3
 vec3	vec3.hpp	/^class vec3 {$/;"	c
-vertical	camera.h	/^        vec3 vertical;$/;"	m	class:camera	typeref:typename:vec3
 vertical	camera.hpp	/^        vec3 vertical;$/;"	m	class:camera	typeref:typename:vec3
 write_color	color.hpp	/^void write_color(std::ostream &out, color pixel_color, int samples_per_pixel) {$/;"	f	typeref:typename:void
 x	vec3.hpp	/^        double x() const { return e[0]; }$/;"	f	class:vec3	typeref:typename:double
