@@ -36,7 +36,7 @@ class lambertian : public material {
 
 class metal : public material {
     public:
-        metal(const color& a) : albedo(a) {}
+        metal(const vec3& a, double f) : albedo(a), fuzz(f < 1 ? f : 1) {}
 
         virtual bool scatter(
             const ray& r_in, const hit_record& rec, color& attenuation, ray& scattered
@@ -49,6 +49,7 @@ class metal : public material {
 
     public:
         color albedo;
+        double fuzz;
 };
 
 #endif
